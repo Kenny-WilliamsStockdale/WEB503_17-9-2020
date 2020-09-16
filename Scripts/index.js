@@ -37,3 +37,14 @@ function createListElement() {
     // revert input value back to nothing
     input.value = "";
 } 
+function addListAfterClcik() {
+    if (inputLength() > 0) {
+        createListElement(0);
+    }
+}
+
+function addListAfterPress(event) {
+    if (inputLength() > 0 && event.keycode ==13) {
+        createListElement();
+    }
+}
