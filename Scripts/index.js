@@ -23,8 +23,17 @@ function createListElement() {
         // if the list item is clicked (li and event listener) then
         // finished is true
         if (finished) {
-            removeButton 
+            removeButton.appendChild(document.createTextNode("remove"));
+            removeButton.classList = "deleteButton";
+            li.appendChild(removeButton);
 
+            removeButton.addEventListener("click", function () {
+                this.parentElement.remove();
+            });
+        } else {
+            this.getElementsByClassName("deleteButton")[0].remove();
         }
-    } )
-}
+    });
+    // revert input value back to nothing
+    input.value = "";
+} 
