@@ -37,7 +37,7 @@ function createListElement() {
     // revert input value back to nothing
     input.value = "";
 } 
-function addListAfterClcik() {
+function addListAfterClick() {
     if (inputLength() > 0) {
         createListElement(0);
     }
@@ -48,3 +48,9 @@ function addListAfterPress(event) {
         createListElement();
     }
 }
+
+
+
+button.addEventListener("click", addListAfterClick);
+
+input.addEventListener("keypress", addListAfterPress);
